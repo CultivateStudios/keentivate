@@ -61,7 +61,10 @@ keentivateChart.prototype.optionalLabelAttributes = {
 	"font": "font-family",
 	"border-radius": "border-radius",
 	"color": "color",
-	"background": "number-background-color"
+	"background": "number-background-color",
+	"x": "xAxisLabel",
+	"y": "yAxisLabel",
+	"x-angle": "xAxisLabelAngle"
 };
 
 //Order of operations function.  Stored in prototype so that child objects can override it.
@@ -103,7 +106,7 @@ keentivateChart.prototype.getFilters = function() {
 		"<= ": "%DOSPLIT%lte%DOSPLIT%",
 		">": "%DOSPLIT%gt%DOSPLIT%",
 		">=": "%DOSPLIT%gte%DOSPLIT%",
-		"/\?/": "%DOSPLIT%exists%DOSPLIT%"
+		"\\?": "%DOSPLIT%exists%DOSPLIT%"
 	};
 
 	var filterAttr = self.getField("filter");
@@ -129,6 +132,13 @@ keentivateChart.prototype.getFilters = function() {
 
 			var split = trimmed.split("%DOSPLIT%");
 			if(split.length == 3) {
+
+				if(split[2] === "true") {
+					split[2] = true;
+				} else if(split[2] === "false") {
+					split[2] = false;
+				}
+				
 				filterArray.push({
 					property: split[0],
 					operator: split[1],
@@ -159,7 +169,7 @@ keentivateChart.prototype.checkRequiredFields = function() {
 	var failed = false;
 
 	for(var key in self.requiredAttributes) {
-		if(!self.element.hasAttribute("keen-" + key)) {
+		if(!self.element.hasAttribute("keen-" + key) && !(key === "timeframe" && self.element.hasAttribute("keen-start") && self.element.hasAttribute("keen-end"))) {
 			self.k.log("Required key not set on keen element: "+key);
 			failed = true;
 			break;
@@ -193,6 +203,11 @@ keentivateChart.prototype.getOptions = function(optionFields) {
 	for(var key in optionFields) {
 		if(self.element.hasAttribute("keen-"+key)) {
 			options[optionFields[key]] = self.element.getAttribute("keen-"+key);
+		} else if(key === "timeframe" && self.element.hasAttribute("keen-start") && self.element.hasAttribute("keen-end")) { //Allow start & end timeframes
+			options[optionFields[key]] = {
+				start: self.element.getAttribute("keen-start"),
+				end: self.element.getAttribute("keen-end")
+			}
 		}
 	}
 

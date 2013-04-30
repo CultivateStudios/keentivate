@@ -15,7 +15,14 @@ keentivateFunnel.prototype.optionalMetricAttributes = {
 };
 
 keentivateFunnel.prototype.optionalLabelAttributes = {
-	"title": "title"
+	"title": "title",
+	"height": "height",
+	"width": "width",
+	"background": "backgroundColor",
+	"title": "title",
+	"show-legend": "showLegend",
+	"color": "color",
+	"font-color": "fontColor"
 };
 
 keentivateFunnel.prototype.init = function() {
@@ -35,7 +42,7 @@ keentivateFunnel.prototype.draw = function() {
 
 	var chart = new Keen.Funnel(self.steps, self.getMetricOptions());
 
-	chart.draw(self.element);
+	chart.draw(self.element, self.getLabelOptions());
 };
 
 keentivateFunnel.prototype.getSteps = function() {
@@ -62,10 +69,79 @@ keentivateFunnel.prototype.getSteps = function() {
 
 		var ev = li.getAttribute("keen-event");
 
-		self.steps.push(new Keen.Step(ev));
+		var filters = self.getStepFilters(li);
+		console.log({filters: filters});
+
+		var step = new Keen.Step(ev);
+		for(var j=0,fmax=filters.length;j<fmax;j++) {
+			step.addFilter(filters[j].property, filters[j].operator, filters[j].value)
+		}
+
+		self.steps.push(step);
 	}
 
 };
+
+keentivateFunnel.prototype.getStepFilters = function(ele) {
+	var self = this;
+
+	var replacements = {
+		"=": "%DOSPLIT%eq%DOSPLIT%",
+		"!=": "%DOSPLIT%ne%DOSPLIT%",
+		"<": "%DOSPLIT%lt%DOSPLIT%",
+		"<= ": "%DOSPLIT%lte%DOSPLIT%",
+		">": "%DOSPLIT%gt%DOSPLIT%",
+		">=": "%DOSPLIT%gte%DOSPLIT%",
+		"\\?": "%DOSPLIT%exists%DOSPLIT%"
+	};
+
+	if(!ele.hasAttribute("keen-filter")) {
+		return [];
+	}
+
+	var filterAttr = ele.getAttribute("keen-filter");
+
+	if(filterAttr) {
+		//Do replacements en masse, so we don't have to loop on each filter
+		for(key in replacements) {
+			filterAttr = filterAttr.replace(new RegExp(key, "g"), replacements[key]);
+		}
+
+		var filters = filterAttr.split("|");
+		var filterArray = [];
+
+		for(var i=0,max=filters.length; i<max; i++) {
+			var trimmed = filters[i].replace(/^\s\s*/, '').replace(/\s\s*$/, '');
+
+			while(trimmed.indexOf("  ") > -1) {
+				trimmed.replace("  ", " ");
+			}
+
+			//Fake out spaces until after the split, please.
+
+
+			var split = trimmed.split("%DOSPLIT%");
+			if(split.length == 3) {
+
+				if(split[2] === "true") {
+					split[2] = true;
+				} else if(split[2] === "false") {
+					split[2] = false;
+				}
+				
+				filterArray.push({
+					property: split[0],
+					operator: split[1],
+					value: split[2]
+				});
+			}
+		}
+
+		return filterArray;
+	} else {
+		return [];
+	}
+}
 
 keentivateFunnel.prototype.startRender = function() {
 	var self = this;

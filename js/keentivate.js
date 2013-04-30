@@ -5,6 +5,7 @@
 	@codekit-append "_keenLoader"
 	@codekit-append "_keentivateChart"
 	@codekit-append "_keentivatePie"
+	@codekit-append "_keentivateBar"
 	@codekit-append "_keentivateNumber"
 	@codekit-append "_keentivateFunnel"
 	@codekit-append "_keentivateLine"
@@ -96,6 +97,10 @@ keentivate.prototype.load = function(className, callback) {
 				renderFunc = self.renderPie;
 				break;
 
+			case "bar":
+				renderFunc = self.renderBar;
+				break;
+
 			case "funnel":
 				renderFunc = self.renderFunnel;
 				break;
@@ -124,6 +129,12 @@ keentivate.prototype.renderPie = function(ele, cb) {
 	var self = this;
 
 	var chart = new keentivatePie(self, ele, cb);
+};
+
+keentivate.prototype.renderBar = function(ele, cb) {
+	var self = this;
+
+	var chart = new keentivateBar(self, ele, cb);
 };
 
 keentivate.prototype.renderNumber = function(ele, cb) {

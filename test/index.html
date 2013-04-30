@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>RingFinder Analytics</title>
+	<link rel="stylesheet" type="text/css" href="/style/main.css" />
+	<script type="text/javascript" src="/js/keentivate.min.js"></script>
+	<script type="text/javascript">
+		function go() {
+			var keenCharts = new keentivate("50f9e03d38433113c1000000", "1c6b79aedef24363ba84f6790e81c4de", {
+				keenClass: "keentivate"
+			})
+		}
+	</script>
+	<style type="text/css">
+		.inline {
+			display: inline-block;
+			margin: 20px;
+		}
+	</style>
+</head>
+<body onload="go();">
+	<div class="keentivate"
+		keen-event="Plays"
+		keen-filter="field_goal_was_good=Y|play_type=FGXP"
+		keen-label="Successful Field Goals">
+	</div>
+	<div class="keentivate"
+		keen-type="line"
+		keen-event="Plays"
+		keen-filter="field_goal_was_good=Y|play_type=FGXP"
+		keen-label="Successful Field Goals"
+		keen-end="2013-01-19T10:00Z"
+		keen-start="2013-01-18T18:00Z"
+		keen-interval="hourly"
+		keen-width="1000"
+		keen-title="Successful Field Goals"
+		keen-x="time"
+		keen-y="field goals">
+	</div>
+	<div class="keentivate"
+		keen-type="pie"
+		keen-event="Plays"
+		keen-group="play_type"
+		keen-title="Types of Plays">
+	</div>
+	<ul class="keentivate" keen-type="funnel" keen-watch="game.home_team" keen-title="This chart makes no sense, but this is the data I had...">
+		<li keen-event="Plays" keen-filter="interception_player?true"></li>
+		<li keen-event="Plays" keen-filter="points_scored=3"></li>
+	</ul>
+</body>
+</html>
