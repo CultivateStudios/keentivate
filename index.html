@@ -50,6 +50,10 @@
 
 <p>I have some bad news.  <a href="https://keen.io">Keen.io</a>'s javascript SDK is a wee bit confusing.  A wee bit, as in if you want to build any sort of intricate analytics dashboard, you're going to find yourself in a giant mess of spaghetti code.  Keentivate solves that.  Keentivate is an <i>almost</i> no-code javascript library that turns your HTML markup into Keen charts</p>
 
+<h3>Install</h3>
+<p>Install is easy.  All you have to do is include the keentivate javascript file, establish your API keys, and you're golden.  The code will look something like below.</p>
+<pre>&lt;script type=&quot;text/javascript&quot; src=&quot;/js/keentivate.min.js&quot;&gt;&lt;/script&gt;<br/>&lt;script type=&quot;text/javascript&quot;&gt;<br/>  var keenCharts = new keentivate(&quot;50f9e03d38433113c1000000&quot;, &quot;1c6b79aedef24363ba84f6790e81c4de&quot;, {<br/>    keenClass: &quot;keentivate&quot;<br/>  })<br/>&lt;/script&gt;</pre>
+
 <h3>Examples</h3>
 <i>Note:  All of these examples use the <a href="https://keen.io/blog/42133621200/whos-ready-for-some-football-data">provided football example data</a>.</i>
 <br /><br />
@@ -57,9 +61,7 @@
   <h4>Number Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre>
-<br/>      &lt;div class=&quot;keentivate&quot;<br/>        keen-event=&quot;Plays&quot;<br/>        keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        keen-label=&quot;Successful Field Goals&quot;&gt;<br/>      &lt;/div&gt;
-      </pre>
+      <pre> &lt;div class=&quot;keentivate&quot;<br/>        keen-event=&quot;Plays&quot;<br/>        keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        keen-label=&quot;Successful Field Goals&quot;&gt;<br/>&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
@@ -78,9 +80,7 @@
   <h4>Line Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre>
-<br/>      &lt;div class=&quot;keentivate&quot;<br/>        keen-event=&quot;Plays&quot;<br/>        keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        keen-label=&quot;Successful Field Goals&quot;&gt;<br/>      &lt;/div&gt;
-      </pre>
+      <pre> &lt;div class=&quot;keentivate&quot;<br/>   keen-type=&quot;line&quot;<br/>   keen-event=&quot;Plays&quot;<br/>   keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>   keen-label=&quot;Successful Field Goals&quot;<br/>   keen-end=&quot;2013-01-19T10:00Z&quot;<br/>   keen-start=&quot;2013-01-18T18:00Z&quot;<br/>   keen-interval=&quot;hourly&quot;<br/>   keen-width=&quot;1000&quot;<br/>   keen-title=&quot;Successful Field Goals&quot;<br/>   keen-x=&quot;time&quot;<br/>   keen-y=&quot;field goals&quot;&gt;<br/> &lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
@@ -94,7 +94,8 @@
         keen-width="475"
         keen-title="Successful Field Goals"
         keen-x="time"
-        keen-y="field goals">
+        keen-y="field goals"
+        keen-background="#828282">
       </div>
     </div>
     <div class="clear"></div>
@@ -106,9 +107,7 @@
   <h4>Pie Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre>
-<br/>      &lt;div class=&quot;keentivate&quot;<br/>        keen-event=&quot;Plays&quot;<br/>        keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        keen-label=&quot;Successful Field Goals&quot;&gt;<br/>      &lt;/div&gt;
-      </pre>
+      <pre> &lt;div class=&quot;keentivate&quot;<br/>   keen-type=&quot;pie&quot;<br/>   keen-event=&quot;Plays&quot;<br/>   keen-group=&quot;play_type&quot;<br/>   keen-title=&quot;Types of Plays&quot;&gt;<br/>&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
@@ -116,7 +115,8 @@
         keen-event="Plays"
         keen-group="play_type"
         keen-title="Types of Plays"
-        keen-width="475">
+        keen-width="475"
+        keen-background="#828282">
       </div>
     </div>
     <div class="clear"></div>
@@ -128,15 +128,12 @@
   <h4>Funnel Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre>
-<br/>      &lt;div class=&quot;keentivate&quot;<br/>        keen-event=&quot;Plays&quot;<br/>        keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        keen-label=&quot;Successful Field Goals&quot;&gt;<br/>      &lt;/div&gt;
-      </pre>
+      <pre> &lt;ul class=&quot;keentivate&quot; keen-type=&quot;funnel&quot; keen-watch=&quot;game.home_team&quot; keen-title=&quot;This chart makes no sense, but this is the data I had...&quot;&gt;<br/>   &lt;li keen-event=&quot;Plays&quot; keen-filter=&quot;interception_player?true&quot;&gt;&lt;/li&gt;<br/>   &lt;li keen-event=&quot;Plays&quot; keen-filter=&quot;points_scored=3&quot;&gt;&lt;/li&gt;<br/> &lt;/ul&gt;</pre>
     </div>  
     <div class="chart">
-      <ul class="keentivate" keen-type="funnel" keen-watch="game.home_team" keen-title="This chart makes no sense, but this is the data I had...">
+      <ul class="keentivate" keen-type="funnel" keen-watch="game.home_team" keen-title="This chart makes no sense, but this is the data I had..." keen-width="475" keen-background="#828282">
         <li keen-event="Plays" keen-filter="interception_player?true"></li>
-        <li keen-event="Plays" keen-filter="points_scored=3"
-        keen-width="475"></li>
+        <li keen-event="Plays" keen-filter="points_scored=3"></li>
       </ul>
     </div>
     <div class="clear"></div>
