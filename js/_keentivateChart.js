@@ -61,10 +61,11 @@ keentivateChart.prototype.optionalLabelAttributes = {
 	"font": "font-family",
 	"border-radius": "border-radius",
 	"color": "color",
-	"background": "number-background-color",
+	"number-background": "number-background-color",
 	"x": "xAxisLabel",
 	"y": "yAxisLabel",
-	"x-angle": "xAxisLabelAngle"
+	"x-angle": "xAxisLabelAngle",
+	"background": "backgroundColor"
 };
 
 //Order of operations function.  Stored in prototype so that child objects can override it.
