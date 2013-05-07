@@ -59,13 +59,24 @@ keentivateChart.prototype.optionalLabelAttributes = {
 	"height": "height",
 	"width": "width",
 	"font": "font-family",
+	"font-color": "fontColor",
 	"border-radius": "border-radius",
 	"color": "color",
+	"colors": "colors",
 	"number-background": "number-background-color",
+	"label-background": "label-background-color",
 	"x": "xAxisLabel",
 	"y": "yAxisLabel",
 	"x-angle": "xAxisLabelAngle",
-	"background": "backgroundColor"
+	"background": "backgroundColor",
+	"chart-height": "chartAreaHeight",
+	"chart-width": "chartAreaWidth",
+	"chart-top": "chartAreaTop",
+	"chart-left": "chartAreaLeft",
+	"line-width": "lineWidth",
+	"show-legend": "showLegend",
+	"label-mapping": "labelMapping",
+	"minimum-slice": "minimumSlicePercentage"
 };
 
 //Order of operations function.  Stored in prototype so that child objects can override it.
