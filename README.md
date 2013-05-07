@@ -36,7 +36,6 @@ In general, though, you're going to want to work with `div`s, and add a keentiva
 I just want to make a **GIANT** note that keentivate is not thoroughly tested.  I've tested it as far as my uses go, and it works fine, but I won't in any way promise that it won't blow up in your environment.
 
 - Test
-- Multiline Chart Support
 - Documentation on differing syntax between Keen.js and keentivate
 - Documentation in general
 
