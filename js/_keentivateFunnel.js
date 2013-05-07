@@ -14,17 +14,6 @@ keentivateFunnel.prototype.optionalMetricAttributes = {
 	"watch": "actorProperty"
 };
 
-keentivateFunnel.prototype.optionalLabelAttributes = {
-	"title": "title",
-	"height": "height",
-	"width": "width",
-	"background": "backgroundColor",
-	"title": "title",
-	"show-legend": "showLegend",
-	"color": "color",
-	"font-color": "fontColor"
-};
-
 keentivateFunnel.prototype.init = function() {
 	var self = this;
 
