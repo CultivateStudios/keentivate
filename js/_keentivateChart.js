@@ -12,7 +12,6 @@ keentivateChart.prototype.super = function(keentivate, element) {
 	self.k = keentivate;
 
 	if(typeof(element) === "undefined") {
-		console.log(self.k);
 		self.k.log("You have to pass an element to keentivateChart");
 	}
 

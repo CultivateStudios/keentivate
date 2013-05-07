@@ -59,7 +59,6 @@ keentivateFunnel.prototype.getSteps = function() {
 		var ev = li.getAttribute("keen-event");
 
 		var filters = self.getStepFilters(li);
-		console.log({filters: filters});
 
 		var step = new Keen.Step(ev);
 		for(var j=0,fmax=filters.length;j<fmax;j++) {

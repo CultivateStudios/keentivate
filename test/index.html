@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>RingFinder Analytics</title>
+	<title>Keentivate Analytics</title>
 	<link rel="stylesheet" type="text/css" href="/style/main.css" />
 	<script type="text/javascript" src="/js/keentivate.min.js"></script>
 	<script type="text/javascript">
@@ -33,6 +33,20 @@
 		keen-interval="hourly"
 		keen-width="1000"
 		keen-title="Successful Field Goals"
+		keen-x="time"
+		keen-y="field goals">
+	</div>
+	<div class="keentivate"
+		keen-type="multiline"
+		keen-event="Plays"
+		keen-filter="field_goal_was_good=Y|play_type=FGXP"
+		keen-label="Successful Field Goals"
+		keen-end="2013-01-19T10:00Z"
+		keen-start="2013-01-18T18:00Z"
+		keen-interval="hourly"
+		keen-width="1000"
+		keen-group="game.home_team"
+		keen-title="Successful Field Goals by Team"
 		keen-x="time"
 		keen-y="field goals">
 	</div>

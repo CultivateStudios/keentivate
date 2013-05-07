@@ -9,7 +9,8 @@
 	@codekit-append "_keentivateNumber"
 	@codekit-append "_keentivateFunnel"
 	@codekit-append "_keentivateLine"
-	
+	@codekit-append "_keentivateMultiline"
+
 */
 var keentivate = function(token, key, options, callback) {
 	var self = this;
@@ -109,6 +110,10 @@ keentivate.prototype.load = function(className, callback) {
 				renderFunc = self.renderLine;
 				break;
 
+			case "multiline":
+				renderFunc = self.renderMultiline;
+				break;
+
 			default:
 				self.log("Invalid keen-type attribute: " + type + ".  Assuming number");
 				break;
@@ -153,6 +158,12 @@ keentivate.prototype.renderLine = function(ele, cb) {
 	var self =this;
 
 	var chart = new keentivateLine(self, ele, cb);
+};
+
+keentivate.prototype.renderMultiline = function(ele, cb) {
+	var self =this;
+
+	var chart = new keentivateMultiline(self, ele, cb);
 };
 
 /* Handy Functions */
