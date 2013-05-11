@@ -86,7 +86,7 @@ keentivate.prototype.load = function(className, callback) {
 	for(var i=0, max=self.elements.length; i<max; i++) {
 		var ele = self.elements[i];
 
-		var type = ele.hasAttribute("keen-type") ? ele.getAttribute("keen-type") : "number";
+		var type = ele.hasAttribute("data-keen-type") ? ele.getAttribute("data-keen-type") : "number";
 
 		var renderFunc = self.renderNumber;
 		switch(type) {

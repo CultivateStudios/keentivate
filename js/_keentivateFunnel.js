@@ -50,13 +50,13 @@ keentivateFunnel.prototype.getSteps = function() {
 	for(var i=0, max=lis.length; i<max; i++) {
 		var li = lis[i];
 
-		if(!li.hasAttribute("keen-event")) {
+		if(!li.hasAttribute("data-keen-event")) {
 			self.stop = true;
 			self.k.log("All steps must have an event attribute");
 			return false;
 		}
 
-		var ev = li.getAttribute("keen-event");
+		var ev = li.getAttribute("data-keen-event");
 
 		var filters = self.getStepFilters(li);
 
@@ -83,11 +83,11 @@ keentivateFunnel.prototype.getStepFilters = function(ele) {
 		"\\?": "%DOSPLIT%exists%DOSPLIT%"
 	};
 
-	if(!ele.hasAttribute("keen-filter")) {
+	if(!ele.hasAttribute("data-keen-filter")) {
 		return [];
 	}
 
-	var filterAttr = ele.getAttribute("keen-filter");
+	var filterAttr = ele.getAttribute("data-keen-filter");
 
 	if(filterAttr) {
 		//Do replacements en masse, so we don't have to loop on each filter

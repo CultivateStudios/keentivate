@@ -180,7 +180,7 @@ keentivateChart.prototype.checkRequiredFields = function() {
 	var failed = false;
 
 	for(var key in self.requiredAttributes) {
-		if(!self.element.hasAttribute("keen-" + key) && !(key === "timeframe" && self.element.hasAttribute("keen-start") && self.element.hasAttribute("keen-end"))) {
+		if(!self.element.hasAttribute("data-keen-" + key) && !(key === "timeframe" && self.element.hasAttribute("data-keen-start") && self.element.hasAttribute("data-keen-end"))) {
 			self.k.log("Required key not set on keen element: "+key);
 			failed = true;
 			break;
@@ -212,12 +212,12 @@ keentivateChart.prototype.getOptions = function(optionFields) {
 	var options = {};
 
 	for(var key in optionFields) {
-		if(self.element.hasAttribute("keen-"+key)) {
-			options[optionFields[key]] = self.element.getAttribute("keen-"+key);
-		} else if(key === "timeframe" && self.element.hasAttribute("keen-start") && self.element.hasAttribute("keen-end")) { //Allow start & end timeframes
+		if(self.element.hasAttribute("data-keen-"+key)) {
+			options[optionFields[key]] = self.element.getAttribute("data-keen-"+key);
+		} else if(key === "timeframe" && self.element.hasAttribute("data-keen-start") && self.element.hasAttribute("data-keen-end")) { //Allow start & end timeframes
 			options[optionFields[key]] = {
-				start: self.element.getAttribute("keen-start"),
-				end: self.element.getAttribute("keen-end")
+				start: self.element.getAttribute("data-keen-start"),
+				end: self.element.getAttribute("data-keen-end")
 			}
 		}
 	}
@@ -232,18 +232,18 @@ keentivateChart.prototype.getField = function(field) {
 		return false;
 	}
 
-	if(!self.element.hasAttribute("keen-"+field)) {
+	if(!self.element.hasAttribute("data-keen-"+field)) {
 		return false;
 	}
 
-	return self.element.getAttribute("keen-"+field);
+	return self.element.getAttribute("data-keen-"+field);
 };
 
 keentivateChart.prototype.onRender = function() {
 	var self = this;
 
-	if(self.element.hasAttribute("keen-on-render")) {
-		var func = self.element.getAttribute("keen-on-render");
+	if(self.element.hasAttribute("data-keen-on-render")) {
+		var func = self.element.getAttribute("data-keen-on-render");
 
 		eval(func);
 	}
