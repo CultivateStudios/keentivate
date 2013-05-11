@@ -19,46 +19,46 @@
 </head>
 <body onload="go();">
 	<div class="keentivate"
-		keen-event="Plays"
-		keen-filter="field_goal_was_good=Y|play_type=FGXP"
-		keen-label="Successful Field Goals">
+		data-keen-event="Plays"
+		data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
+		data-keen-label="Successful Field Goals">
 	</div>
 	<div class="keentivate"
-		keen-type="line"
-		keen-event="Plays"
-		keen-filter="field_goal_was_good=Y|play_type=FGXP"
-		keen-label="Successful Field Goals"
-		keen-end="2013-01-19T10:00Z"
-		keen-start="2013-01-18T18:00Z"
-		keen-interval="hourly"
-		keen-width="1000"
-		keen-title="Successful Field Goals"
-		keen-x="time"
-		keen-y="field goals">
+		data-keen-type="line"
+		data-keen-event="Plays"
+		data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
+		data-keen-label="Successful Field Goals"
+		data-keen-end="2013-01-19T10:00Z"
+		data-keen-start="2013-01-18T18:00Z"
+		data-keen-interval="hourly"
+		data-keen-width="1000"
+		data-keen-title="Successful Field Goals"
+		data-keen-x="time"
+		data-keen-y="field goals">
 	</div>
 	<div class="keentivate"
-		keen-type="multiline"
-		keen-event="Plays"
-		keen-filter="field_goal_was_good=Y|play_type=FGXP"
-		keen-label="Successful Field Goals"
-		keen-end="2013-01-19T10:00Z"
-		keen-start="2013-01-18T18:00Z"
-		keen-interval="hourly"
-		keen-width="1000"
-		keen-group="game.home_team"
-		keen-title="Successful Field Goals by Team"
-		keen-x="time"
-		keen-y="field goals">
+		data-keen-type="multiline"
+		data-keen-event="Plays"
+		data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
+		data-keen-label="Successful Field Goals"
+		data-keen-end="2013-01-19T10:00Z"
+		data-keen-start="2013-01-18T18:00Z"
+		data-keen-interval="hourly"
+		data-keen-width="1000"
+		data-keen-group="game.home_team"
+		data-keen-title="Successful Field Goals by Team"
+		data-keen-x="time"
+		data-keen-y="field goals">
 	</div>
 	<div class="keentivate"
-		keen-type="pie"
-		keen-event="Plays"
-		keen-group="play_type"
-		keen-title="Types of Plays">
+		data-keen-type="pie"
+		data-keen-event="Plays"
+		data-keen-group="play_type"
+		data-keen-title="Types of Plays">
 	</div>
-	<ul class="keentivate" keen-type="funnel" keen-watch="game.home_team" keen-title="This chart makes no sense, but this is the data I had...">
-		<li keen-event="Plays" keen-filter="interception_player?true"></li>
-		<li keen-event="Plays" keen-filter="points_scored=3"></li>
+	<ul class="keentivate" data-keen-type="funnel" data-keen-watch="game.home_team" data-keen-title="This chart makes no sense, but this is the data I had...">
+		<li data-keen-event="Plays" data-keen-filter="interception_player?true"></li>
+		<li data-keen-event="Plays" data-keen-filter="points_scored=3"></li>
 	</ul>
 </body>
 </html>
