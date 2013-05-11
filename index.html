@@ -65,14 +65,14 @@ title: Blogging Like a Hacker
   <h4>Number Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;div class=&quot;keentivate&quot;<br/>        keen-event=&quot;Plays&quot;<br/>        keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        keen-label=&quot;Successful Field Goals&quot;&gt;<br/>&lt;/div&gt;</pre>
+      <pre> &lt;div class=&quot;keentivate&quot;<br/>        data-keen-event=&quot;Plays&quot;<br/>        data-keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        data-keen-label=&quot;Successful Field Goals&quot;&gt;<br/>&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
-        keen-event="Plays"
-        keen-filter="field_goal_was_good=Y|play_type=FGXP"
-        keen-label="Successful Field Goals"
-        keen-width="475">
+        data-keen-event="Plays"
+        data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
+        data-keen-label="Successful Field Goals"
+        data-keen-width="475">
       </div>
     </div>
     <div class="clear"></div>
@@ -84,22 +84,22 @@ title: Blogging Like a Hacker
   <h4>Line Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;div class=&quot;keentivate&quot;<br/>   keen-type=&quot;line&quot;<br/>   keen-event=&quot;Plays&quot;<br/>   keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>   keen-label=&quot;Successful Field Goals&quot;<br/>   keen-end=&quot;2013-01-19T10:00Z&quot;<br/>   keen-start=&quot;2013-01-18T18:00Z&quot;<br/>   keen-interval=&quot;hourly&quot;<br/>   keen-width=&quot;1000&quot;<br/>   keen-title=&quot;Successful Field Goals&quot;<br/>   keen-x=&quot;time&quot;<br/>   keen-y=&quot;field goals&quot;&gt;<br/> &lt;/div&gt;</pre>
+      <pre> &lt;div class=&quot;keentivate&quot;<br/>   data-keen-type=&quot;line&quot;<br/>   data-keen-event=&quot;Plays&quot;<br/>   data-keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>   data-keen-label=&quot;Successful Field Goals&quot;<br/>   data-keen-end=&quot;2013-01-19T10:00Z&quot;<br/>   data-keen-start=&quot;2013-01-18T18:00Z&quot;<br/>   data-keen-interval=&quot;hourly&quot;<br/>   data-keen-width=&quot;1000&quot;<br/>   data-keen-title=&quot;Successful Field Goals&quot;<br/>   data-keen-x=&quot;time&quot;<br/>   data-keen-y=&quot;field goals&quot;&gt;<br/> &lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
-        keen-type="line"
-        keen-event="Plays"
-        keen-filter="field_goal_was_good=Y|play_type=FGXP"
-        keen-label="Successful Field Goals"
-        keen-end="2013-01-19T10:00Z"
-        keen-start="2013-01-18T18:00Z"
-        keen-interval="hourly"
-        keen-width="475"
-        keen-title="Successful Field Goals"
-        keen-x="time"
-        keen-y="field goals"
-        keen-background="#828282">
+        data-keen-type="line"
+        data-keen-event="Plays"
+        data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
+        data-keen-label="Successful Field Goals"
+        data-keen-end="2013-01-19T10:00Z"
+        data-keen-start="2013-01-18T18:00Z"
+        data-keen-interval="hourly"
+        data-keen-width="475"
+        data-keen-title="Successful Field Goals"
+        data-keen-x="time"
+        data-keen-y="field goals"
+        data-keen-background="#828282">
       </div>
     </div>
     <div class="clear"></div>
@@ -111,35 +111,35 @@ title: Blogging Like a Hacker
   <div class="exampleWrapper">
     <div class="code">
       <pre>&lt;div class=&quot;keentivate&quot;
-  keen-type=&quot;multiline&quot;
-  keen-event=&quot;Plays&quot;
-  keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;
-  keen-label=&quot;Successful Field Goals&quot;
-  keen-end=&quot;2013-01-19T10:00Z&quot;
-  keen-start=&quot;2013-01-18T18:00Z&quot;
-  keen-interval=&quot;hourly&quot;
-  keen-width=&quot;1000&quot;
-  keen-group=&quot;game.home_team&quot;
-  keen-title=&quot;Successful Field Goals by Team&quot;
-  keen-x=&quot;time&quot;
-  keen-y=&quot;field goals&quot;&gt;
+  data-keen-type=&quot;multiline&quot;
+  data-keen-event=&quot;Plays&quot;
+  data-keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;
+  data-keen-label=&quot;Successful Field Goals&quot;
+  data-keen-end=&quot;2013-01-19T10:00Z&quot;
+  data-keen-start=&quot;2013-01-18T18:00Z&quot;
+  data-keen-interval=&quot;hourly&quot;
+  data-keen-width=&quot;1000&quot;
+  data-keen-group=&quot;game.home_team&quot;
+  data-keen-title=&quot;Successful Field Goals by Team&quot;
+  data-keen-x=&quot;time&quot;
+  data-keen-y=&quot;field goals&quot;&gt;
 &lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
-        keen-type="multiline"
-        keen-event="Plays"
-        keen-filter="field_goal_was_good=Y|play_type=FGXP"
-        keen-label="Successful Field Goals"
-        keen-end="2013-01-19T10:00Z"
-        keen-start="2013-01-18T18:00Z"
-        keen-interval="hourly"
-        keen-width="475"
-        keen-group="game.home_team"
-        keen-title="Successful Field Goals by Team"
-        keen-x="time"
-        keen-y="field goals"
-        keen-background="#828282">
+        data-keen-type="multiline"
+        data-keen-event="Plays"
+        data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
+        data-keen-label="Successful Field Goals"
+        data-keen-end="2013-01-19T10:00Z"
+        data-keen-start="2013-01-18T18:00Z"
+        data-keen-interval="hourly"
+        data-keen-width="475"
+        data-keen-group="game.home_team"
+        data-keen-title="Successful Field Goals by Team"
+        data-keen-x="time"
+        data-keen-y="field goals"
+        data-keen-background="#828282">
       </div>
     </div>
     <div class="clear"></div>
@@ -151,16 +151,16 @@ title: Blogging Like a Hacker
   <h4>Pie Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;div class=&quot;keentivate&quot;<br/>   keen-type=&quot;pie&quot;<br/>   keen-event=&quot;Plays&quot;<br/>   keen-group=&quot;play_type&quot;<br/>   keen-title=&quot;Types of Plays&quot;&gt;<br/>&lt;/div&gt;</pre>
+      <pre> &lt;div class=&quot;keentivate&quot;<br/>   data-keen-type=&quot;pie&quot;<br/>   data-keen-event=&quot;Plays&quot;<br/>   data-keen-group=&quot;play_type&quot;<br/>   data-keen-title=&quot;Types of Plays&quot;&gt;<br/>&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
-        keen-type="pie"
-        keen-event="Plays"
-        keen-group="play_type"
-        keen-title="Types of Plays"
-        keen-width="475"
-        keen-background="#828282">
+        data-keen-type="pie"
+        data-keen-event="Plays"
+        data-keen-group="play_type"
+        data-keen-title="Types of Plays"
+        data-keen-width="475"
+        data-keen-background="#828282">
       </div>
     </div>
     <div class="clear"></div>
@@ -172,12 +172,12 @@ title: Blogging Like a Hacker
   <h4>Funnel Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;ul class=&quot;keentivate&quot; keen-type=&quot;funnel&quot; keen-watch=&quot;game.home_team&quot; keen-title=&quot;This chart makes no sense, but this is the data I had...&quot;&gt;<br/>   &lt;li keen-event=&quot;Plays&quot; keen-filter=&quot;interception_player?true&quot;&gt;&lt;/li&gt;<br/>   &lt;li keen-event=&quot;Plays&quot; keen-filter=&quot;points_scored=3&quot;&gt;&lt;/li&gt;<br/> &lt;/ul&gt;</pre>
+      <pre> &lt;ul class=&quot;keentivate&quot; data-keen-type=&quot;funnel&quot; data-keen-watch=&quot;game.home_team&quot; data-keen-title=&quot;This chart makes no sense, but this is the data I had...&quot;&gt;<br/>   &lt;li data-keen-event=&quot;Plays&quot; data-keen-filter=&quot;interception_player?true&quot;&gt;&lt;/li&gt;<br/>   &lt;li data-keen-event=&quot;Plays&quot; data-keen-filter=&quot;points_scored=3&quot;&gt;&lt;/li&gt;<br/> &lt;/ul&gt;</pre>
     </div>  
     <div class="chart">
-      <ul class="keentivate" keen-type="funnel" keen-watch="game.home_team" keen-title="This chart makes no sense, but this is the data I had..." keen-width="475" keen-background="#828282">
-        <li keen-event="Plays" keen-filter="interception_player?true"></li>
-        <li keen-event="Plays" keen-filter="points_scored=3"></li>
+      <ul class="keentivate" data-keen-type="funnel" data-keen-watch="game.home_team" data-keen-title="This chart makes no sense, but this is the data I had..." data-keen-width="475" data-keen-background="#828282">
+        <li data-keen-event="Plays" data-keen-filter="interception_player?true"></li>
+        <li data-keen-event="Plays" data-keen-filter="points_scored=3"></li>
       </ul>
     </div>
     <div class="clear"></div>
