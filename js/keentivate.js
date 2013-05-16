@@ -39,8 +39,6 @@ var keentivate = function(access, options, callback) {
 	self.options = self.merge(defaults, options);
 
 	//Initialize Keen
-
-	console.log(access);
 	Keen.configure(access);
 	Keen.onChartsReady(function() {
 
