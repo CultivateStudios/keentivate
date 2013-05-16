@@ -12,7 +12,7 @@
 	@codekit-append "_keentivateMultiline"
 
 */
-var keentivate = function(token, key, options, callback) {
+var keentivate = function(access, options, callback) {
 	var self = this;
 
 	self.ready = false;
@@ -22,13 +22,8 @@ var keentivate = function(token, key, options, callback) {
 		timeframe: "previous_7_days"
 	};
 
-	if(typeof(token) === "undefined") {
-		self.log("You must supply a token");
-		return false;
-	}
-
-	if(typeof(key) === "undefined") {
-		self.log("You must supply an API Key");
+	if(typeof(access) !== "object") {
+		self.log("You must supply access details");
 		return false;
 	}
 
@@ -45,7 +40,8 @@ var keentivate = function(token, key, options, callback) {
 
 	//Initialize Keen
 
-	Keen.configure(token, key);
+	console.log(access);
+	Keen.configure(access);
 	Keen.onChartsReady(function() {
 
 		if(self.options.keenClass) {

@@ -4,9 +4,13 @@
 	<script type="text/javascript" src="../js/keentivate.min.js"></script>
 	<script type="text/javascript">
 		function go() {
-			var keenCharts = new keentivate("50f9e03d38433113c1000000", "1c6b79aedef24363ba84f6790e81c4de", {
-				keenClass: "keentivate"
-			})
+			var keenCharts = new keentivate({
+					projectId: "50f9e03d38433113c1000000", 
+					readKey: "b26ea0311b271ca63c315b4ac474f5d1ed42d496b6b7fcf050d1dca3fa2ff968bbc9a3e403506322b64b07501acdaf8c22a3a70c80583a9e9a106bb7006a001b7cbf80ef5676617ffa0d530c43e435b9915a8b3f8c6809b6c97f6ff4783a383ed44ca3942b22279517fc8f959bb7e06d"
+				}, 
+				{
+					keenClass: "keentivate"
+				});
 		}
 	</script>
 	<style type="text/css">
