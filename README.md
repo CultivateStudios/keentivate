@@ -28,10 +28,10 @@ In general, though, you're going to want to work with `div`s, and add a keentiva
 
 ```
  <div class="keentivate"
-   keen-type="pie"
-   keen-event="Plays"
-   keen-group="play_type"
-   keen-title="Types of Plays">
+   data-keen-type="pie"
+   data-keen-event="Plays"
+   data-keen-group="play_type"
+   data-keen-title="Types of Plays">
 </div>
 ```
 
