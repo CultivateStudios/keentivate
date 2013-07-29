@@ -11,7 +11,8 @@ keentivateFunnel.prototype.requiredAttributes = {
 }
 
 keentivateFunnel.prototype.optionalMetricAttributes = {
-	"watch": "actorProperty"
+	"watch": "actorProperty",
+	"timeframe": "timeframe"
 };
 
 keentivateFunnel.prototype.init = function() {
