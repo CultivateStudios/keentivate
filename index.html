@@ -16,8 +16,8 @@ title: Blogging Like a Hacker
     <script type="text/javascript">
       function go() {
       var keenCharts = new keentivate({
-          projectId: "50f9e03d38433113c1000000", 
-          readKey: "b26ea0311b271ca63c315b4ac474f5d1ed42d496b6b7fcf050d1dca3fa2ff968bbc9a3e403506322b64b07501acdaf8c22a3a70c80583a9e9a106bb7006a001b7cbf80ef5676617ffa0d530c43e435b9915a8b3f8c6809b6c97f6ff4783a383ed44ca3942b22279517fc8f959bb7e06d"
+          projectId: "51cee1b7897a2c5a74000001", 
+          readKey: "d26495906529de8ee6f9ad9cdee37505b3eaf4d6f5b5c8c072eef9fc61db01011e7bff3a0ea98055239921986b15118480463aa1b2b6f89ef6328fa8ee84a43cb4927886657cdaab402dd36f0eca7a4a23761d5df3e50ac787803bd607272a719936261fa61b43458ec51de250fd8cf5"
         }, 
         {
           keenClass: "keentivate"
@@ -61,28 +61,31 @@ title: Blogging Like a Hacker
 <h3>Install</h3>
 <p>Install is easy.  All you have to do is include the keentivate javascript file, establish your API keys, and you're golden.  The code will look something like below.</p>
 <pre>var keenCharts = new keentivate({
-  projectId: "50f9e03d38433113c1000000", 
-  readKey: "b26ea0311b271ca63c315b4ac474f5d1ed42d496b6b7fcf050d1dca3fa2ff968bbc9a3e403506322b64b07501acdaf8c22a3a70c80583a9e9a106bb7006a001b7cbf80ef5676617ffa0d530c43e435b9915a8b3f8c6809b6c97f6ff4783a383ed44ca3942b22279517fc8f959bb7e06d"
+  projectId: "51cee1b7897a2c5a74123401", 
+  readKey: "d26495906529de8ee6f1234cdee37505b3eaf4d6f5b5c8c072eef9fc61db01011e7bff3a0ea98055239921986b15118480463aa1b2b6f89ef6328fa8ee84a43cb4927886657cdaab402dd36f0eca7a4a23761d5df3e50ac787803bd607272a719936261fa61b43458ec51de250fd8cf5"
 }, 
 {
   keenClass: "keentivate"
 });</pre>
 
 <h3>Examples</h3>
-<i>Note:  All of these examples use the <a href="https://keen.io/blog/42133621200/whos-ready-for-some-football-data">provided football example data</a>.</i>
+<i>Note:  All of these examples use my site, [WegnerDesign's](http://www.wegnerdesign.com), analytics data.</a>.</i>
 <br /><br />
 <div id="numberExample" class="example">
   <h4>Number Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;div class=&quot;keentivate&quot;<br/>        data-keen-event=&quot;Plays&quot;<br/>        data-keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>        data-keen-label=&quot;Successful Field Goals&quot;&gt;<br/>&lt;/div&gt;</pre>
+      <pre>&lt;div class=&quot;keentivate&quot;
+        data-keen-event=&quot;page_load&quot;
+        data-keen-filter=&quot;newVisitor=true&quot;
+        data-keen-label=&quot;New Visitors&quot;&gt;
+&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
-        data-keen-event="Plays"
-        data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
-        data-keen-label="Successful Field Goals"
-        data-keen-width="475">
+        data-keen-event="page_load"
+        data-keen-filter="newVisitor=true"
+        data-keen-label="New Visitors">
       </div>
     </div>
     <div class="clear"></div>
@@ -94,22 +97,33 @@ title: Blogging Like a Hacker
   <h4>Line Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;div class=&quot;keentivate&quot;<br/>   data-keen-type=&quot;line&quot;<br/>   data-keen-event=&quot;Plays&quot;<br/>   data-keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;<br/>   data-keen-label=&quot;Successful Field Goals&quot;<br/>   data-keen-end=&quot;2013-01-19T10:00Z&quot;<br/>   data-keen-start=&quot;2013-01-18T18:00Z&quot;<br/>   data-keen-interval=&quot;hourly&quot;<br/>   data-keen-width=&quot;1000&quot;<br/>   data-keen-title=&quot;Successful Field Goals&quot;<br/>   data-keen-x=&quot;time&quot;<br/>   data-keen-y=&quot;field goals&quot;&gt;<br/> &lt;/div&gt;</pre>
+      <pre>&lt;div class=&quot;keentivate&quot;
+        data-keen-type=&quot;line&quot;
+        data-keen-event=&quot;interaction&quot;
+        data-keen-filter=&quot;action=finished_blog&quot;
+        data-keen-label=&quot;Articles Finished&quot;
+        data-keen-end=&quot;2013-07-15T10:00Z&quot;
+        data-keen-start=&quot;2013-07-01T18:00Z&quot;
+        data-keen-interval=&quot;daily&quot;
+        data-keen-width=&quot;470&quot;
+        data-keen-title=&quot;Articles Finished&quot;
+        data-keen-x=&quot;time&quot;
+        data-keen-y=&quot;field goals&quot;&gt;
+&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
         data-keen-type="line"
-        data-keen-event="Plays"
-        data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
-        data-keen-label="Successful Field Goals"
-        data-keen-end="2013-01-19T10:00Z"
-        data-keen-start="2013-01-18T18:00Z"
-        data-keen-interval="hourly"
-        data-keen-width="475"
-        data-keen-title="Successful Field Goals"
+        data-keen-event="interaction"
+        data-keen-filter="action=finished_blog"
+        data-keen-label="Articles Finished"
+        data-keen-end="2013-07-15T10:00Z"
+        data-keen-start="2013-07-01T18:00Z"
+        data-keen-interval="daily"
+        data-keen-width="470"
+        data-keen-title="Articles Finished"
         data-keen-x="time"
-        data-keen-y="field goals"
-        data-keen-background="#828282">
+        data-keen-y="field goals">
       </div>
     </div>
     <div class="clear"></div>
@@ -121,35 +135,34 @@ title: Blogging Like a Hacker
   <div class="exampleWrapper">
     <div class="code">
       <pre>&lt;div class=&quot;keentivate&quot;
-  data-keen-type=&quot;multiline&quot;
-  data-keen-event=&quot;Plays&quot;
-  data-keen-filter=&quot;field_goal_was_good=Y|play_type=FGXP&quot;
-  data-keen-label=&quot;Successful Field Goals&quot;
-  data-keen-end=&quot;2013-01-19T10:00Z&quot;
-  data-keen-start=&quot;2013-01-18T18:00Z&quot;
-  data-keen-interval=&quot;hourly&quot;
-  data-keen-width=&quot;1000&quot;
-  data-keen-group=&quot;game.home_team&quot;
-  data-keen-title=&quot;Successful Field Goals by Team&quot;
-  data-keen-x=&quot;time&quot;
-  data-keen-y=&quot;field goals&quot;&gt;
+        data-keen-type=&quot;multiline&quot;
+        data-keen-event=&quot;interaction&quot;
+        data-keen-filter=&quot;page.path=/&quot;
+        data-keen-label=&quot;Homepage Interactions&quot;
+        data-keen-end=&quot;2013-07-15T10:00Z&quot;
+        data-keen-start=&quot;2013-07-01T18:00Z&quot;
+        data-keen-interval=&quot;daily&quot;
+        data-keen-width=&quot;470&quot;
+        data-keen-group=&quot;action&quot;
+        data-keen-title=&quot;Homepage Interactions&quot;
+        data-keen-x=&quot;days&quot;
+        data-keen-y=&quot;interactions&quot;&gt;
 &lt;/div&gt;</pre>
     </div>  
     <div class="chart">
       <div class="keentivate"
         data-keen-type="multiline"
-        data-keen-event="Plays"
-        data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
-        data-keen-label="Successful Field Goals"
-        data-keen-end="2013-01-19T10:00Z"
-        data-keen-start="2013-01-18T18:00Z"
-        data-keen-interval="hourly"
-        data-keen-width="475"
-        data-keen-group="game.home_team"
-        data-keen-title="Successful Field Goals by Team"
-        data-keen-x="time"
-        data-keen-y="field goals"
-        data-keen-background="#828282">
+        data-keen-event="interaction"
+        data-keen-filter="page.path=/"
+        data-keen-label="Homepage Interactions"
+        data-keen-end="2013-07-15T10:00Z"
+        data-keen-start="2013-07-01T18:00Z"
+        data-keen-interval="daily"
+        data-keen-width="470"
+        data-keen-group="action"
+        data-keen-title="Homepage Interactions"
+        data-keen-x="days"
+        data-keen-y="interactions">
       </div>
     </div>
     <div class="clear"></div>
@@ -161,17 +174,21 @@ title: Blogging Like a Hacker
   <h4>Pie Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;div class=&quot;keentivate&quot;<br/>   data-keen-type=&quot;pie&quot;<br/>   data-keen-event=&quot;Plays&quot;<br/>   data-keen-group=&quot;play_type&quot;<br/>   data-keen-title=&quot;Types of Plays&quot;&gt;<br/>&lt;/div&gt;</pre>
+      <pre>&lt;div class=&quot;keentivate&quot;
+    data-keen-type=&quot;pie&quot;
+    data-keen-event=&quot;page_load&quot;
+    data-keen-group=&quot;page.path&quot;
+    data-keen-title=&quot;Page Popularity&quot;&gt;
+&lt;/div&gt;</pre>
     </div>  
     <div class="chart">
-      <div class="keentivate"
-        data-keen-type="pie"
-        data-keen-event="Plays"
-        data-keen-group="play_type"
-        data-keen-title="Types of Plays"
-        data-keen-width="475"
-        data-keen-background="#828282">
-      </div>
+  <div class="keentivate"
+    data-keen-type="pie"
+    data-keen-event="page_load"
+    data-keen-group="page.path"
+    data-keen-width="470"
+    data-keen-title="Page Popularity">
+  </div>
     </div>
     <div class="clear"></div>
   </div>
@@ -182,45 +199,21 @@ title: Blogging Like a Hacker
   <h4>Funnel Chart</h4>
   <div class="exampleWrapper">
     <div class="code">
-      <pre> &lt;ul class=&quot;keentivate&quot; data-keen-type=&quot;funnel&quot; data-keen-watch=&quot;game.home_team&quot; data-keen-title=&quot;This chart makes no sense, but this is the data I had...&quot;&gt;<br/>   &lt;li data-keen-event=&quot;Plays&quot; data-keen-filter=&quot;interception_player?true&quot;&gt;&lt;/li&gt;<br/>   &lt;li data-keen-event=&quot;Plays&quot; data-keen-filter=&quot;points_scored=3&quot;&gt;&lt;/li&gt;<br/> &lt;/ul&gt;</pre>
+      <pre>&lt;ul class=&quot;keentivate&quot; data-keen-type=&quot;funnel&quot; data-keen-watch=&quot;guid&quot; data-keen-title=&quot;Read and Shared&quot; data-keen-start=&quot;2013-07-01T18:00Z&quot; data-keen-end=&quot;2013-07-15T18:00Z&quot;&gt;
+        &lt;li data-keen-event=&quot;interaction&quot; data-keen-filter=&quot;action=finished_blog&quot;&gt;&lt;/li&gt;
+        &lt;li data-keen-event=&quot;interaction&quot; data-keen-filter=&quot;action=social_hover&quot;&gt;&lt;/li&gt;
+        &lt;li data-keen-event=&quot;interaction&quot; data-keen-filter=&quot;action=social_click&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;</pre>
     </div>  
     <div class="chart">
-      <ul class="keentivate" data-keen-type="funnel" data-keen-watch="game.home_team" data-keen-title="This chart makes no sense, but this is the data I had..." data-keen-width="475" data-keen-background="#828282">
-        <li data-keen-event="Plays" data-keen-filter="interception_player?true"></li>
-        <li data-keen-event="Plays" data-keen-filter="points_scored=3"></li>
+      <ul class="keentivate" data-keen-type="funnel" data-keen-watch="guid" data-keen-width="470" data-keen-title="Read and Shared" data-keen-start="2013-07-01T18:00Z" data-keen-end="2013-07-15T18:00Z">
+        <li data-keen-event="interaction" data-keen-filter="action=finished_blog"></li>
+        <li data-keen-event="interaction" data-keen-filter="action=social_hover"></li>
+        <li data-keen-event="interaction" data-keen-filter="action=social_click"></li>
       </ul>
     </div>
     <div class="clear"></div>
   </div>
 </div>
-
-<!--
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
-  </body>
+</body>
 </html>
