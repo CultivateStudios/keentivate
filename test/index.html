@@ -5,8 +5,8 @@
 	<script type="text/javascript">
 		function go() {
 			var keenCharts = new keentivate({
-					projectId: "50f9e03d38433113c1000000", 
-					readKey: "b26ea0311b271ca63c315b4ac474f5d1ed42d496b6b7fcf050d1dca3fa2ff968bbc9a3e403506322b64b07501acdaf8c22a3a70c80583a9e9a106bb7006a001b7cbf80ef5676617ffa0d530c43e435b9915a8b3f8c6809b6c97f6ff4783a383ed44ca3942b22279517fc8f959bb7e06d"
+					projectId: "51cee1b7897a2c5a74000001", 
+					readKey: "d26495906529de8ee6f9ad9cdee37505b3eaf4d6f5b5c8c072eef9fc61db01011e7bff3a0ea98055239921986b15118480463aa1b2b6f89ef6328fa8ee84a43cb4927886657cdaab402dd36f0eca7a4a23761d5df3e50ac787803bd607272a719936261fa61b43458ec51de250fd8cf5"
 				}, 
 				{
 					keenClass: "keentivate"
@@ -22,46 +22,47 @@
 </head>
 <body onload="go();">
 	<div class="keentivate"
-		data-keen-event="Plays"
-		data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
-		data-keen-label="Successful Field Goals">
+		data-keen-event="page_load"
+		data-keen-filter="newVisitor=true"
+		data-keen-label="New Visitors">
 	</div>
 	<div class="keentivate"
 		data-keen-type="line"
-		data-keen-event="Plays"
-		data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
-		data-keen-label="Successful Field Goals"
-		data-keen-end="2013-01-19T10:00Z"
-		data-keen-start="2013-01-18T18:00Z"
-		data-keen-interval="hourly"
+		data-keen-event="interaction"
+		data-keen-filter="action=finished_blog"
+		data-keen-label="Articles Finished"
+		data-keen-end="2013-07-15T10:00Z"
+		data-keen-start="2013-07-01T18:00Z"
+		data-keen-interval="daily"
 		data-keen-width="1000"
-		data-keen-title="Successful Field Goals"
+		data-keen-title="Articles Finished"
 		data-keen-x="time"
 		data-keen-y="field goals">
 	</div>
 	<div class="keentivate"
 		data-keen-type="multiline"
-		data-keen-event="Plays"
-		data-keen-filter="field_goal_was_good=Y|play_type=FGXP"
-		data-keen-label="Successful Field Goals"
-		data-keen-end="2013-01-19T10:00Z"
-		data-keen-start="2013-01-18T18:00Z"
-		data-keen-interval="hourly"
+		data-keen-event="interaction"
+		data-keen-filter="page.path=/"
+		data-keen-label="Homepage Interactions"
+		data-keen-end="2013-07-15T10:00Z"
+		data-keen-start="2013-07-01T18:00Z"
+		data-keen-interval="daily"
 		data-keen-width="1000"
-		data-keen-group="game.home_team"
-		data-keen-title="Successful Field Goals by Team"
-		data-keen-x="time"
-		data-keen-y="field goals">
+		data-keen-group="action"
+		data-keen-title="Homepage Interactions"
+		data-keen-x="days"
+		data-keen-y="interactions">
 	</div>
 	<div class="keentivate"
 		data-keen-type="pie"
-		data-keen-event="Plays"
-		data-keen-group="play_type"
-		data-keen-title="Types of Plays">
+		data-keen-event="page_load"
+		data-keen-group="page.path"
+		data-keen-title="Page Popularity">
 	</div>
-	<ul class="keentivate" data-keen-type="funnel" data-keen-watch="game.home_team" data-keen-title="This chart makes no sense, but this is the data I had...">
-		<li data-keen-event="Plays" data-keen-filter="interception_player?true"></li>
-		<li data-keen-event="Plays" data-keen-filter="points_scored=3"></li>
+	<ul class="keentivate" data-keen-type="funnel" data-keen-watch="guid" data-keen-title="Read and Shared">
+		<li data-keen-event="interaction" data-keen-filter="action=finished_blog"></li>
+		<li data-keen-event="interaction" data-keen-filter="action=social_hover"></li>
+		<li data-keen-event="interaction" data-keen-filter="action=social_click"></li>
 	</ul>
 </body>
 </html>

@@ -28,10 +28,8 @@ keentivateMultiline.prototype.getMetric = function() {
 		return false;
 	}
 
-	console.log(self.getMetricOptions());
 	self.metric = new Keen.Series(self.getField("event"), self.getMetricOptions());
 
-	console.log(self.getFilters());
 	var filters = self.getFilters();
 
 	for(var i=0, max=filters.length; i<max; i++) {
