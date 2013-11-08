@@ -153,6 +153,7 @@ function buildListChartType() {
         list.style.margin = 0;
         list.style.padding = 0;
         list.style.textShadow = "none";
+        list.style["list-style-type"] = "none";
 
         var drawIt = _.bind(function(response){
             this.data = response.result;
