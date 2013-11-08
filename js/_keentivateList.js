@@ -42,21 +42,22 @@ function buildListChartType() {
 	}
 
 	clearInterval(buildInterval);
-	console.log("creating ListChartType");
 /**
      * List - A class to display the results of a metric.
      *
      * @param {Keen.Metric|Keen.SavedQuery} query The query you'd like to visualize.
      * @param {Object} options The options used to style the visualization (defaults are provided)
-     * @param {String} [options.height="150px"] The height of the visualization.
      * @param {String} [options.width="300px"] The width of the visualization.
      * @param {String} [options.font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"] Font family
+     * @param {String} [options.fontSize="1em"] Font Size
      * @param {String} [options.color="white"] The color of the text in the visualization
      * @param {String} [options.border-radius="0px"] The border radius of the visualization
      * @param {String} [options.list-background-color="#7dcc77"] The color of the list background
      * @param {String} [options.title-background-color="#9CD898"] The color of the title background
      * @param {String} [options.prefix] A text prefix for the number.
      * @param {String} [options.suffix] A text suffix for the number.
+     * @param {String} [options.sortField="result"] Field to sort by
+     * @param {String} [options.sortDirection="desc"] Direction to sort
      */
     Keen.List = Keen.BaseVisualization.extend({
         constructor : function(query, options){
